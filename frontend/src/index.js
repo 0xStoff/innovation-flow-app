@@ -12,7 +12,7 @@ import "font-awesome/css/font-awesome.css";
 import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:1337/graphql",
+  uri: process.env.REACT_APP_URL_GRAPHQL,
 });
 
 const authLink = setContext((_, { headers }) => {

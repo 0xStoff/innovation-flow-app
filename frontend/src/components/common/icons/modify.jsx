@@ -31,6 +31,7 @@ export const ModifyIcons = ({ feedback }) => {
     const index = allFeedbacks.indexOf(feedback);
     Object.keys(newData).map((key) => (updatedFeedback[key] = newData[key]));
     allFeedbacks[index] = updatedFeedback;
+
     setFeedbacks(allFeedbacks);
 
     const { title, content } = newData;

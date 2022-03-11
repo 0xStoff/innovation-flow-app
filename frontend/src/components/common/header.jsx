@@ -2,8 +2,11 @@ import { Tooltip, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import brueggliLogo from "../../img/logo_brueggli.svg";
 import InfoIcon from "@mui/icons-material/Info";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export function Header() {
+  const matches = useMediaQuery("(min-width:900px)");
+
   return (
     <Box
       sx={{
@@ -26,12 +29,13 @@ export function Header() {
         </Typography>
         <Tooltip
           enterTouchDelay={0}
-          title="Innovation Flow ist ein Feedback-Pinnwand für die Mitarbeiter von Brüggli Medien. 
+          leaveTouchDelay={10000}
+          title="Innovation Flow ist eine Feedback-Pinnwand für die Mitarbeiter von Brüggli Medien. 
 Hast du Anregungen zu internen Prozessen? Hast du ein Feedback zur Firma?
 Oder schweben dir Strategien vor, um unsere Effizienz zu steigern?
 Dann melde dich an und gebe jetzt dein Feedback ab!"
           arrow
-          placement="right"
+          placement={matches ? "right" : "left"}
         >
           <InfoIcon />
         </Tooltip>

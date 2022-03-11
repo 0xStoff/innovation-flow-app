@@ -8,7 +8,7 @@ export const APOLLO_GET_FEEDBACKS = gql`
         attributes {
           title
           content
-          users {
+          author {
             data {
               id
               attributes {
@@ -84,7 +84,7 @@ export const LOGIN_USER = gql`
 
 export const ADD_FEEDBACK = gql`
   mutation createFeedback($userId: ID!, $title: String!, $content: String!) {
-    createFeedback(data: { title: $title, content: $content, users: $userId }) {
+    createFeedback(data: { title: $title, content: $content, author: $userId }) {
       data {
         id
         attributes {

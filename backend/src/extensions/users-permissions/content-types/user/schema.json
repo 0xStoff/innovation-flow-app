@@ -63,12 +63,6 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "feedbacks": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::feedback.feedback",
-      "mappedBy": "users"
-    },
     "comments": {
       "type": "relation",
       "relation": "oneToMany",
@@ -86,6 +80,12 @@
       "relation": "manyToMany",
       "target": "api::feedback.feedback",
       "inversedBy": "likes"
+    },
+    "feedbacks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feedback.feedback",
+      "mappedBy": "author"
     }
   }
 }

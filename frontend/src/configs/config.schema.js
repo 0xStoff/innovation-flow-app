@@ -27,7 +27,7 @@ export const schemaUserLogin = {
 };
 
 const regExp =
-    /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{6,50}$/;
+    /^(?=.*[0-9])(?=.*[!@#$%^&*.-])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*.-]{6,50}$/;
 
 export const schemaUserRegister = {
     username: Joi.string()

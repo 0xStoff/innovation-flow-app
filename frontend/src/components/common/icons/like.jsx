@@ -1,8 +1,10 @@
 import { Grid, Typography } from "@mui/material";
 import React from "react";
-import { user } from "../../../configs/config";
+import { getCurrentUser } from "../../../services/authService";
 
 const Like = ({ onClick, likes }) => {
+  const user = getCurrentUser();
+
   let classes = "clickable heartIcon fa fa-heart";
   let increment = likes.length;
   const findById = user ? likes.find((id) => id == user.id) : null;

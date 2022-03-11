@@ -12,7 +12,7 @@ const dialogContent = {
   cancel: "Nein",
 };
 
-function UserIcons() {
+function UserIcons({ refetch }) {
   const [openDialog, setOpenDialog] = useState(false);
   const navigate = useNavigate();
 
@@ -40,7 +40,10 @@ function UserIcons() {
     >
       <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
         <IconButton
-          onClick={() => navigate("/feedbacks")}
+          onClick={() => {
+            navigate("/feedbacks");
+            refetch();
+          }}
           sx={{ marginRight: "auto" }}
         >
           <HomeIcon fontSize="large" />

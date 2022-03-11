@@ -8,11 +8,12 @@ import Like from "./common/icons/like";
 import { CommentIcon } from "./common/icons/comment";
 import { ModifyIcons } from "./common/icons/modify";
 import { setLikeByUser } from "../services/feedbackServices";
-import { user } from "../configs/config";
+// import { user } from "../configs/config";
 import Comments from "./comments";
 import FeedbacksContext from "../context/feedbacksContext";
 import { ADD_COMMENT, LIKE_FEEDBACK } from "../graphql/graphs";
 import { useMutation } from "@apollo/client";
+import { getCurrentUser } from "../services/authService";
 // import Form from "./common/Form";
 // import { schemaFeedback } from "../configs/config.schema";
 
@@ -25,6 +26,8 @@ export default function FeedBackCard({ feedback }) {
   const [allLikes, setAllLikes] = useState(feedback.likes);
 
   const [openSwipeable, setOpenSwipeable] = useState(false);
+
+  const user = getCurrentUser();
 
   const handleLike = () => {
     const likes = setLikeByUser(user, feedback, feedbacks);

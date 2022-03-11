@@ -29,7 +29,7 @@ export function Login() {
   }, [data]);
 
   const showError = () => {
-    toast.error("Login failed", {
+    toast.error("Login fehlgeschlagen, falsche Email oder Passwort", {
       toastId: "login-error",
     });
     reset();

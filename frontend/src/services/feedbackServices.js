@@ -33,8 +33,8 @@ export function setLikeByUser(user, dataToLike, allData) {
 export function changeObjectStructure(data) {
   const feedbacks = data.feedbacks.data.map((u) => {
     const author = {
-      id: u.attributes.users.data.id,
-      username: u.attributes.users.data.attributes.username,
+      id: u.attributes.author.data.id,
+      username: u.attributes.author.data.attributes.username,
     };
 
     const comments = u.attributes.comments.data.map((c) => {

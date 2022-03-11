@@ -24,7 +24,7 @@ function Layout() {
   useEffect(() => {
     if (!loading && !error && data) {
       const feedbacks = changeObjectStructure(data);
-      setFeedbacks(feedbacks);
+      setFeedbacks(feedbacks.reverse());
     }
   }, [loading, error, data]);
 
@@ -54,7 +54,7 @@ function Layout() {
             path="/feedbacks"
             element={
               <React.Fragment>
-                <UserIcons />
+                <UserIcons refetch={refetch} />
                 <Header />
                 <Home />
               </React.Fragment>
@@ -65,7 +65,7 @@ function Layout() {
             element={
               <React.Fragment>
                 {!user && <Navigate to="/login" />}
-                <UserIcons />
+                <UserIcons refetch={refetch} />
                 <AboutMe />
               </React.Fragment>
             }

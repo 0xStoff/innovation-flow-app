@@ -13,7 +13,6 @@ import FeedbacksContext from "../context/feedbacksContext";
 function Home() {
   const user = getCurrentUser();
   const [feedbacks, setFeedbacks] = useContext(FeedbacksContext);
-
   const [addFeedback, { loading, error, data }] = useMutation(ADD_FEEDBACK);
 
   const doSubmit = (newData) => {
@@ -24,7 +23,7 @@ function Home() {
       likes: [],
       ...newData,
     };
-    allData.push(addNewData);
+    allData.unshift(addNewData);
     setFeedbacks(allData);
 
     const { content, title } = newData;

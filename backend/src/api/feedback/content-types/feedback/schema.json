@@ -15,7 +15,7 @@
     "title": {
       "type": "string"
     },
-    "users": {
+    "author": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",

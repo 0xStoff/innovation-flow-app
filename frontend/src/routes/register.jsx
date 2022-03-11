@@ -32,9 +32,10 @@ export function Register() {
   }, [data]);
 
   const showError = () => {
-    toast.error("Register failed", {
+    toast.error("Registrierung fehlgeschlagen, Email ist bereits registriert", {
       toastId: "register-error",
     });
+    navigate("/login");
     reset();
   };
 

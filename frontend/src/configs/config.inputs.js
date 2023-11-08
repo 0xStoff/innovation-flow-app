@@ -11,7 +11,7 @@ export const feedbackInputs = [
         value: "",
         type: "text",
         multiline: true,
-    },
+    }
 ];
 
 export const feedbackEditInputs = [

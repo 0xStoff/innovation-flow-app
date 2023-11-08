@@ -17,7 +17,6 @@ können über diese Pinnwand Feedback zur Firma, Strategien, Prozessen, Kantine
     <br />
     <br />
     <br />
-    <a href="http://stoeff.xyz"><strong>App gehosted auf stoeff.xyz »</strong></a><br>
-    <a href="http://stoeff.xyz:1337"><strong>Strapi Backend über stoeff.xyz:1337 »</strong></a>
+    <a href="http://innovation.stoeff.xyz"><strong>App gehosted auf stoeff.xyz »</strong></a><br>
   </p>
 </div>

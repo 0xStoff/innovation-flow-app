@@ -1,0 +1,3 @@
+[submodule "innovation-flow-app"]
+	path = innovation-flow-app
+	url = git@github.com:0xStoff/innovation-flow-app.git

@@ -1,10 +1,10 @@
 export function setLikeByUser(user, dataToLike, allData) {
   let likedData = [...dataToLike.likes];
-  const index = likedData.indexOf(user.id.toString());
+  const index = likedData.indexOf(user.documentId.toString());
   // console.log(index);
-  // console.log(user.id);
-  let isLiked = likedData.find((id) => id == user.id);
-  if (!isLiked) likedData.push(user.id.toString());
+  // console.log(user.documentId);
+  let isLiked = likedData.find((id) => id == user.documentId);
+  if (!isLiked) likedData.push(user.documentId.toString());
   else {
     likedData.splice(index, 1);
   }
@@ -31,28 +31,29 @@ export function setLikeByUser(user, dataToLike, allData) {
 // }
 
 export function changeObjectStructure(data) {
-  const feedbacks = data.feedbacks.data.map((u) => {
+  const feedbacks = data.feedbacks.map((u) => {
     const author = {
-      id: u.attributes.author.data.id,
-      username: u.attributes.author.data.attributes.username,
+      id: u.author.documentId,
+      username: u.author.username,
     };
 
-    const comments = u.attributes.comments.data.map((c) => {
-      const likes = c.attributes.likes.data.map((l) => l.id);
+    console.log(u)
+    const comments = u.comments.map((c) => {
+      const likes = c.likes.map((l) => l.documentId);
       return {
-        id: c.id,
+        id: c.documentId,
         avatar: "/avatar.png",
-        username: c.attributes.user.data.attributes.username,
-        secondary: c.attributes.content,
+        username: c.user.username,
+        secondary: c.content,
         likes: likes,
       };
     });
 
     return {
-      id: u.id,
-      title: u.attributes.title,
-      content: u.attributes.content,
-      likes: u.attributes.likes.data.map((l) => l.id),
+      id: u.documentId,
+      title: u.title,
+      content: u.content,
+      likes: u.likes.map((l) => l.documentId),
       // likes: [1, 2, 3],
       author: author,
       comments: comments,

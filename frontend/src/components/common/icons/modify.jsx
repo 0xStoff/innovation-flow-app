@@ -21,7 +21,7 @@ export const ModifyIcons = ({ feedback }) => {
     const remainingFeedbacks = feedbacks.filter((f) => f !== feedback);
     setFeedbacks(remainingFeedbacks);
 
-    const deleteId = feedback.id;
+    const deleteId = feedback.documentId;
     deleteFeedback({ variables: { deleteId } });
   };
 
@@ -35,11 +35,11 @@ export const ModifyIcons = ({ feedback }) => {
     setFeedbacks(allFeedbacks);
 
     const { title, content } = newData;
-    const updateId = feedback.id;
+    const updateId = feedback.documentId;
     updateFeedback({ variables: { updateId, title, content } });
   };
 
-  if (user.id !== feedback.author.id)
+  if (user.username !== feedback.author.username)
     return (
       <Typography sx={{ marginRight: "auto" }} variant="caption">
         von {feedback.author.username}

@@ -4,6 +4,7 @@ export function saveUser(data) {
     email: data.user.email,
     username: data.user.username,
   };
+
   localStorage.setItem("user", JSON.stringify(user));
   localStorage.setItem("jwt", data.jwt);
 }

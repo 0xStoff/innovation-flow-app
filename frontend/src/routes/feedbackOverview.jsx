@@ -18,7 +18,7 @@ function Home() {
   const doSubmit = (newData) => {
     const allData = [...feedbacks];
     const addNewData = {
-      author: { id: user.id, username: user.username },
+      author: { id: user.documentId, username: user.username },
       comments: [],
       likes: [],
       ...newData,
@@ -27,7 +27,7 @@ function Home() {
     setFeedbacks(allData);
 
     const { content, title } = newData;
-    const userId = user.id;
+    const userId = user.documentId;
     addFeedback({ variables: { userId, title, content } });
   };
 

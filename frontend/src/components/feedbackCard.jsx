@@ -32,7 +32,7 @@ export default function FeedBackCard({ feedback }) {
   const handleLike = () => {
     const likes = setLikeByUser(user, feedback, feedbacks);
     setAllLikes(likes);
-    const feedbackId = feedback.id;
+    const feedbackId = feedback.documentId;
     likeFeedback({ variables: { feedbackId, allLikes: likes } });
   };
 

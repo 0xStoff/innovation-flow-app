@@ -17,18 +17,6 @@ export function Register() {
 
   useEffect(() => {
     if (user) navigate("/feedbacks");
-    if (!error && !loading && data) {
-      saveUser(data.register);
-      window.location = "/feedbacks";
-    }
-
-    // if (!error && !loading && data) {
-    //   saveUser(data.login);
-    //   window.location = "/feedbacks";
-    //   // navigate("/feedbacks");
-
-    //   console.log(data.login);
-    // }
   }, [data]);
 
   const showError = () => {
@@ -47,6 +35,13 @@ export function Register() {
         password,
       },
     });
+
+      if (!error && !loading) {
+          navigate("/login");
+          toast.success("Registrierung erfolgreich, du kannst dich nun einloggen.", {
+              toastId: "register-error",
+          });
+      }
   };
 
   return (

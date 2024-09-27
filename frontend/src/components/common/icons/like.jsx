@@ -7,7 +7,8 @@ const Like = ({ onClick, likes }) => {
 
   let classes = "clickable heartIcon fa fa-heart";
   let increment = likes.length;
-  const findById = user ? likes.find((id) => id == user.documentId) : null;
+
+  const findById = user ? likes.find((id) => id === user.id) : null;
   if (!findById) classes += "-o";
   if (increment === 0) increment = "";
 

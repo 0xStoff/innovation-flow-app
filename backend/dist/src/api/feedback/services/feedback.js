@@ -1,6 +1,6 @@
 "use strict";
 /**
- * feedback service
+ * user service
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const strapi_1 = require("@strapi/strapi");

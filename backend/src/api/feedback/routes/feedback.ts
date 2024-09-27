@@ -1,5 +1,5 @@
 /**
- * feedback router
+ * user router
  */
 
 import { factories } from '@strapi/strapi';

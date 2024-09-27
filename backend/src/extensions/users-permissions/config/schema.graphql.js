@@ -1,19 +1,18 @@
 module.exports = {
     definition: `
-    type UsersPermissionsUser {
-      id: ID!
-      username: String
-      email: String
-      feedbacks: [Feedback]
+    extend type UsersPermissionsMe {
+      documentId: String
     }
   `,
-    query: `
-    me: UsersPermissionsUser
-  `,
-    resolver: {
-        Query: {
-            me: {
-                resolver: 'plugins::users-permissions.user.me',
+    resolvers: {
+        UsersPermissionsMe: {
+            documentId: {
+                resolve: async (obj, options, { context }) => {
+                    // Fetch the user by ID and return the documentId
+                    const userId = context.state.user.id;
+                    const user = await strapi.query('plugin::users-permissions.user').findOne({ id: userId });
+                    return user.documentId;
+                },
             },
         },
     },

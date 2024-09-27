@@ -24,7 +24,7 @@ export default function AboutMe() {
         <Card sx={{ mb: 1, width: "md" }}>
           <CardContent>
             <Avatar sx={{ my: 2 }}>{user.username.charAt(0)}</Avatar>
-            <Typography>id: {user.documentId}</Typography>
+            <Typography>id: {user.id}</Typography>
             <Typography>username: {user.username}</Typography>
             <Typography>email: {user.email}</Typography>
           </CardContent>

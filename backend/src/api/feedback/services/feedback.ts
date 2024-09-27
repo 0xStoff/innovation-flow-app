@@ -1,5 +1,5 @@
 /**
- * feedback service
+ * user service
  */
 
 import { factories } from '@strapi/strapi';

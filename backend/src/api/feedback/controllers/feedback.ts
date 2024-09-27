@@ -1,5 +1,5 @@
 /**
- * feedback controller
+ * user controller
  */
 
 import { factories } from '@strapi/strapi'

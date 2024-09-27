@@ -1,6 +1,6 @@
-export function saveUser(data) {
+export function saveUser(data, userData) {
   const user = {
-    id: data.user.id,
+    id: userData.documentId,
     email: data.user.email,
     username: data.user.username,
   };
@@ -14,10 +14,7 @@ export function logout() {
 }
 
 export function getCurrentUser() {
-  // const response = await httpService.get("/users?populate=*");
-  // console.log(response);
   if (!localStorage.getItem("jwt")) return;
   const getUser = localStorage.getItem("user");
-  const user = JSON.parse(getUser);
-  return user;
+  return JSON.parse(getUser);
 }

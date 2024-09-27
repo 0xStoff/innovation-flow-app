@@ -13,8 +13,9 @@ const RenderComments = (comment, comments, doLike) => {
     doLike(comment, comments);
   };
 
+
   return (
-    <React.Fragment key={comment.documentId}>
+    <React.Fragment key={comment.id}>
       <SingleComment
         avatar={avatar}
         username={username}

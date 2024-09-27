@@ -21,11 +21,11 @@ export default function Comments({ feedback }) {
 
   const doSubmit = (newData) => {
     const allData = [...feedbacks];
-    const currentFeedback = allData.find((f) => f.documentId === feedback.documentId);
+    const currentFeedback = allData.find((f) => f.id === feedback.id);
     const index = allData.indexOf(currentFeedback);
 
     const addNewData = {
-      id: user.documentId,
+      id: user.id,
       avatar: "/static/images/avatar/1.jpg",
       username: user.username,
       likes: [],
@@ -37,8 +37,8 @@ export default function Comments({ feedback }) {
 
     setFeedbacks(allData);
     const content = newData.comment;
-    const userId = user.documentId;
-    const feedbackId = feedback.documentId;
+    const userId = user.id;
+    const feedbackId = feedback.id;
     addComment({
       variables: { userId, feedbackId, content },
     });
@@ -46,7 +46,7 @@ export default function Comments({ feedback }) {
 
   const doLike = (comment, comments) => {
     const likes = setLikeByUser(user, comment, comments);
-    const commentId = comment.documentId;
+    const commentId = comment.id;
     likeComment({ variables: { commentId, allLikes: likes } });
   };
 
